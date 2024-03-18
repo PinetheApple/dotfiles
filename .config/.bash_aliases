@@ -1,6 +1,4 @@
 alias vim='~/Applications/nvim.appimage'
-alias update='sudo nala update'
-alias upgrade='sudo nala upgrade'
 alias commands='cat ~/.config/.bash_aliases'
 alias updatedb='sudo updatedb'
 alias fastboot='sudo ~/Downloads/platform-tools/fastboot'
