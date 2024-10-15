@@ -16,7 +16,7 @@ configuration {
 
 // Main //
 window {
-    height:                      40em;
+    height:                      35em;
     width:                       25em;
     transparency:                "real";
     fullscreen:                  false;
@@ -26,6 +26,7 @@ window {
     padding:                     0em;
     border-color:                @main-br;
     background-color:            @main-bg;
+    border-radius:		 1em;
 }
 mainbox {
     enabled:                     true;
