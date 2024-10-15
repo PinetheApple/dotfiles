@@ -1,0 +1,105 @@
+{
+    // workspaces
+    "hyprland/workspaces": {
+	"on-click": "activate",
+	"active-only": false,
+	"all-outputs": true,
+	"format": "{icon}",
+	"format-icons": {
+		"urgent": "",
+		"active": "",
+		"default": ""
+	},
+	"persistent_workspaces": {
+	    "*": 5
+	}
+    },
+
+    // clock
+    "clock" : {
+	"format": " {:%R}",
+	"format-alt": "  {:%a, %b %d, %R}",
+        "tooltip": false
+    },
+
+    // volume control
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{volume}% {icon} {format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": "x {format_source}",
+        "format-muted": "x {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+	"tooltip": false
+        //"on-click": "pavucontrol"
+    },
+
+    // bluetooth
+    "bluetooth": {
+	"format": "",
+	"format-off": " off",
+	"format-on": " on",
+	"format-connected": " {device_alias}",
+	"format-disabled": "",
+	"tooltip": false
+    },
+
+    // network info    
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-ethernet": "{essid} ",
+        "format-disconnected": "Disconnected ⚠",
+        "format-alt": "",
+        "tooltip": false
+    },
+
+    // power profiles
+    "power-profiles-daemon": {
+      "format": "{icon}",
+      "tooltip-format": "Power profile: {profile}",
+      "tooltip": true,
+      "format-icons": {
+        "default": "",
+        "performance": "",
+        "balanced": "",
+        "power-saver": ""
+      }
+    },
+
+    // system info group
+    
+
+    // battery
+    "battery": {
+        "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+	"format": "{capacity}% {icon}",
+        "format-full": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        "tooltip": false,
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": ["", "", "", "", ""]
+    },
+
+    // wlogout menu
+    "custom/wlogout": {
+    }
+
+
+}
