@@ -21,19 +21,9 @@
 	"bluetooth",
         "network",
         "power-profiles-daemon",
-        "group/system",
         "battery",
 	"custom/wlogout"
     ],
-
-    // Group configurations
-    "group/system": {
-	"orientation": "horizontal",
-	"modules": [
-	    "cpu",
-	    "memory"
-	]
-    },
 
 // move all these to modules.json
     "hyprland/submap": {
