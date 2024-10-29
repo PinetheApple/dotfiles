@@ -5,4 +5,7 @@ alias vim=nvim
 alias updatedb='sudo updatedb'
 alias bluetooth='~/.config/bluetooth_manager'
 alias ls='eza'
+alias la='eza -a'
+alias ll='eza -la'
+alias lr='eza --git-ignore -R'
 alias cat='bat'
