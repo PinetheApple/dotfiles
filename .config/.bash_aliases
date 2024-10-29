@@ -1,6 +1,8 @@
-alias vim='~/Applications/nvim.appimage'
-alias commands='cat ~/.config/.bash_aliases'
+alias open=xdg-open
+alias ghidra='/home/pineapple/ghidra/ghidra_11.2_PUBLIC/ghidraRun'
+alias vi=nvim
+alias vim=nvim
 alias updatedb='sudo updatedb'
-alias fastboot='sudo ~/Downloads/platform-tools/fastboot'
-alias adb='~/Downloads/platform-tools/adb'
-alias bat='batcat'
+alias bluetooth='~/.config/bluetooth_manager'
+alias ls='eza'
+alias cat='bat'
