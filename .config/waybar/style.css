@@ -1,105 +1,102 @@
 * {
-    border: none;
-    border-radius: 0px;
-    font-family: "JetBrainsMonoNL Nerd Font";
-    font-size: 12px;
-    font-style: normal;
-    font-weight: bold;
-    min-height: 0;
+	border: none;
+	border-radius: 0px;
+	font-family: "JetBrainsMonoNL Nerd Font";
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold;
+	min-height: 0;
 }
 
 window#waybar {
-    background: rgba(16, 18, 19, 0.95);
-    border-bottom: 0.5px solid #0c0e0f;
-    color: #cdd6f4
+	background: rgba(16, 18, 19, 0.95);
+	border-bottom: 0.5px solid #0c0e0f;
+	color: #cdd6f4
 }
 
 #workspaces {
-    margin: 0px;
-    padding: 7px;
+	margin: 0px;
+	padding: 7px;
 }
+
 #workspaces button label {
-    font-size: 0;
-    padding: 0;
+	font-size: 0;
+	padding: 0;
 }
+
 #workspaces button {
-    border-radius: 50px;
-    background-color: #2f354a;
-    transition: all 0.3s ease-in-out;
-    margin: 0px 3px;
-    padding: 0;
+	border-radius: 50px;
+	background-color: #2f354a;
+	transition: all 0.3s ease-in-out;
+	margin: 0px 3px;
+	padding: 0;
 
 }
+
 #workspaces button:hover {
-    background-color: #cdd6f4;
-    color: #cdd6f4;
-    min-width: 25px;
+	background-color: #cdd6f4;
+	color: #cdd6f4;
+	min-width: 25px;
 }
+
 #workspaces button.active {
-    background-color: #cdd6f4;
-    min-width: 35px;
-    transition: all 0.3s ease-in-out;
+	background-color: #cdd6f4;
+	min-width: 35px;
+	transition: all 0.3s ease-in-out;
 }
 
 #custom-wlogout {
-    color: #24283b;
-    background-color: #db4b4b;
-    border-radius: 5px;
-    margin: 10px;
-    padding: 5px 10px;
+	color: #24283b;
+	background-color: #db4b4b;
+	border-radius: 5px;
+	margin: 10px;
+	padding: 5px 10px;
 }
 
 #clock {
-    font-size: 15px;
-    font-weight: bold;
+	font-size: 15px;
+	font-weight: bold;
 }
 
 #battery {
-    font-size: 12px;
-    color: #9ece6a;
-    margin: 0 20px 0 5px;
+	font-size: 12px;
+	color: #9ece6a;
+	margin: 0 20px 0 5px;
 }
+
 #battery.charging {
-    color: #9ece6a;
+	color: #9ece6a;
 }
+
 #battery.warning:not(.charging) {
-    color: #f7768e;
+	color: #f7768e;
 }
 
 #network {
-    color: #cdd6f4;
-    margin: 0 10px 0 8px;
+	color: #cdd6f4;
+	margin: 0 10px 0 8px;
 }
 
 #pulseaudio {
-    margin: 0 8px;
+	margin: 0 8px;
 }
 
 #bluetooth {
-    margin: 0 8px;
+	margin: 0 8px;
 }
 
 #power-profiles-daemon {
-    margin: 0 8px;
+	margin: 0 8px;
 }
+
 #power-profiles-daemon.power-saver {
-    color: green;
+	color: green;
 }
+
 #power-profiles-daemon.balanced {
-    color: blue;
+	color: blue;
 }
+
 #power-profiles-daemon.performance {
-    color: red;
-}
-
-#cpu, #memory {
-    margin: 0 3px;
-}
-
-#cpu {
-    margin-left: 5px;
-}
-
-#memory {
-    margin-right: 5px;
+	color: red;
 }
