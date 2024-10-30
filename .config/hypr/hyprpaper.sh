@@ -16,9 +16,11 @@ load_wallpapers() {
 	echo -e "\nwallpaper = ,$wallpaper" >> "$config_file"  # set current wallpaper
 }
 
-config_file="$HOME/.config/hypr/hyprpaper2.conf"
+config_file="$HOME/.config/hypr/hyprpaper.conf"
 > "$config_file"  # clear config file
 
 load_wallpapers
 
 echo -e "\nsplash = false" >> "$config_file"
+
+hyprpaper --config $HOME/.config/hypr/hyprpaper.conf
