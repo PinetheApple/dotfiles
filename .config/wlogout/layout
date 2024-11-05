@@ -1,6 +1,6 @@
 {
 	"label" : "suspend",
-	"action" : "bluetooth disconnect & hyprlock & systemctl suspend"
+	"action" : "playerctl pause; bluetooth disconnect; (hyprlock & systemctl suspend)"
 	"text" : "Suspend"
 	"keybind" : "s",
 	"height" : 0.6
