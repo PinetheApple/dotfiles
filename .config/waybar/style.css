@@ -1,3 +1,5 @@
+@import url("../../.cache/wal/colors-waybar.css");
+
 * {
 	border: none;
 	border-radius: 0px;
@@ -9,9 +11,9 @@
 }
 
 window#waybar {
-	background: rgba(16, 18, 19, 0.95);
+	background: @background;
 	border-bottom: 0.5px solid #0c0e0f;
-	color: #cdd6f4
+	color: @foreground;
 }
 
 #workspaces {
@@ -26,7 +28,7 @@ window#waybar {
 
 #workspaces button {
 	border-radius: 50px;
-	background-color: #2f354a;
+	background-color: rgba(255,255,255,0.2);
 	transition: all 0.3s ease-in-out;
 	margin: 0px 3px;
 	padding: 0;
@@ -34,13 +36,13 @@ window#waybar {
 }
 
 #workspaces button:hover {
-	background-color: #cdd6f4;
-	color: #cdd6f4;
+	background-color: @foreground;
+	color: @foreground;
 	min-width: 25px;
 }
 
 #workspaces button.active {
-	background-color: #cdd6f4;
+	background-color: @foreground;
 	min-width: 35px;
 	transition: all 0.3s ease-in-out;
 }
@@ -60,20 +62,20 @@ window#waybar {
 
 #battery {
 	font-size: 12px;
-	color: #9ece6a;
+	color: @color1;
 	margin: 0 20px 0 5px;
 }
 
 #battery.charging {
-	color: #9ece6a;
+	color: @color1;
 }
 
 #battery.warning:not(.charging) {
-	color: #f7768e;
+	color: @color12;
 }
 
 #network {
-	color: #cdd6f4;
+	color: @foreground;
 	margin: 0 10px 0 8px;
 }
 
@@ -90,13 +92,13 @@ window#waybar {
 }
 
 #power-profiles-daemon.power-saver {
-	color: green;
+	color: @color15;
 }
 
 #power-profiles-daemon.balanced {
-	color: blue;
+	color: @color10;
 }
 
 #power-profiles-daemon.performance {
-	color: red;
+	color: @color4;
 }
