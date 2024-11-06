@@ -149,6 +149,8 @@ def select_random_wallpaper():
 def main():
     if len(sys.argv) > 1:
         wallpaper = sys.argv[1]
+        if not wallpaper.startswith(('~','/')):
+            wallpaper = HOME + "/Pictures/Wallpapers/" + wallpaper
     else:
         print("No wallpaper specified. Selecting a random wallpaper...")
         wallpaper = select_random_wallpaper()
