@@ -1,15 +1,11 @@
-/* ----------- 💫 https://github.com/JaKooLit 💫 -------- */
-/* pywal-wlogout */
-
 /* Importing pywal colors */
-
 @import '../../.cache/wal/colors-waybar.css';
 
 window {
 	font-family: "JetBrainsMonoNL Nerd Font";
 	font-size: 16pt;
 	color: @foreground;
-	background-color: rgba(24, 27, 32, 0.2);
+	background-color: rgba(24, 27, 32, 0.6);
 }
 
 button {
@@ -22,6 +18,8 @@ button {
 	box-shadow: 0 0 10px 2px transparent;
 	border-radius: 36px;
 	margin: 10px;
+	padding: 100px;
+	-gtk-outline-radius: 36px;
 }
 
 button:focus {
