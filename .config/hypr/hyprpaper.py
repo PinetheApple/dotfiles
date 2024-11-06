@@ -52,6 +52,31 @@ def get_preloaded_wallpapers():
     return wallpapers
 
 
+def convert_to_png(wallpaper: str):
+    img_name = wallpaper.split('/')[-1]
+    if img_name.endswith('.jpg'):
+        img_name = img_name[:-4]
+    else:
+        img_name = img_name[:-5]
+
+    png_wallpaper = '/tmp/' + img_name + '.png'
+    if os.path.exists(png_wallpaper):
+        print(f"Found {png_wallpaper}.")
+        return png_wallpaper
+    
+    print("No PNG version found in \'/tmp\'. Creating PNG version...")
+    result = subprocess.run(
+        ["magick", wallpaper, png_wallpaper], 
+        capture_output=True, 
+        text=True
+    )
+    if not result.returncode == 0:
+        print(f"Failed to create PNG version. {result.stderr=}")
+        return wallpaper
+
+    return png_wallpaper
+
+
 def update_pywal():
     # clear cache as it prevents pywal from properly updating the colours
     result = subprocess.run(["rm", "-r", PYWAL_CACHE])
@@ -91,6 +116,10 @@ def update_wallpaper(wallpaper: str, display: str):
         return
 
     print("Updated wallpaper successfully!\n")
+    if wallpaper.endswith((".jpg", ".jpeg")):
+        print("Image is JPG. Checking for PNG version in \'/tmp\' for hyprlock...")
+        wallpaper = convert_to_png(wallpaper)
+
     print("Copying wallpaper to .cache directory...")
     result = subprocess.run(
         ["cp", wallpaper, CACHED_WALLPAPER],
