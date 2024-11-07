@@ -52,7 +52,9 @@ return {
             require("configs.treesitter")
         end,
     },
-    { "ryanoasis/vim-devicons" },
+    {
+        "ryanoasis/vim-devicons",
+    },
     {
         "rust-lang/rust.vim",
         ft = "rust",
