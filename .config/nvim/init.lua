@@ -37,3 +37,4 @@ vim.schedule(function()
 end)
 
 require("custom.autocmds")
+require("custom.commands")
