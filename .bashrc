@@ -117,6 +117,7 @@ fi
 
 . "$HOME/.cargo/env"
 export XDG_RUNTIME_DIR=/run/user/1000
+export EDITOR=/usr/bin/nvim
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
