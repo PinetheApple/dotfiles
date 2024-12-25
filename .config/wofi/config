@@ -1,0 +1,12 @@
+style = ../../../.config/wofi/style.css
+colors = ../../../.cache/wal/colors
+show = drun
+width = 35%
+height = 50%
+allow_images = true
+term = kitty
+no_actions = false
+lines = 15
+sort_order = default
+hide_scroll = true
+insensitive = true
