@@ -1,135 +1,111 @@
-// Config //
 configuration {
-    modi:                        "drun,filebrowser,window,run";
-    show-icons:                  true;
-    display-drun:                " ";
-    display-filebrowser:         " ";
-    display-window:              " ";
-    drun-display-format:         "{name}";
-    window-format:               "{w}{t}";
-    font:                        "JetBrainsMono Nerd Font 10";
-    icon-theme:                  "Tela-circle-dracula";
+    show-icons:                 true;
+    display-drun:               "";
+	drun-display-format:        "{name}";
+	font:                       "JetBrainsMonoNL Nerd Font Mono 9";
 }
 
 @theme "~/.cache/wal/colors-rofi-dark.rasi"
 
-
-// Main //
+/*****----- Main Window -----*****/
 window {
-    height:                      35em;
-    width:                       25em;
-    transparency:                "real";
+    location:                    center;
     fullscreen:                  false;
-    enabled:                     true;
-    cursor:                      "default";
-    spacing:                     0em;
-    padding:                     0em;
-    border-color:                @border-color;
-    background-color:            @background;
-    border-radius:		 1em;
-}
-mainbox {
-    enabled:                     true;
-    spacing:                     0em;
-    padding:                     1em;
-    orientation:                 vertical;
-    children:                    [ "inputbar" , "listbox" ];
+    width:                       750px;
+	padding:					 0;
+    border:                      2px solid;
+    border-radius:               12px;
+    border-color:                #33ccffcc;
     background-color:            transparent;
 }
 
+/*****----- Main Box -----*****/
+mainbox {
+    enabled:                     true;
+    spacing:                     20px;
+    padding:                     20px;
+    background-color:            transparent;
+    children:                    [ "inputbar", "listview" ];
+}
 
-// Inputs //
+/*****----- Inputbar -----*****/
 inputbar {
     enabled:                     true;
-    spacing:                     0em;
-    padding:                     4em;
-    children:                    [ "entry" ];
-    background-color:            @background;
-    background-image:            url("~/.cache/.current_wallpaper", width);
-    border-radius:               1em 1em 0em 0em;
+    spacing:                     10px;
+    padding:                     15px;
+    border:                      0;
+    border-radius:               10px;
+    text-color:                  @foreground;
+    children:                    [ "prompt", "entry" ];
+}
+
+prompt {
+    enabled:                     true;
+    background-color:            transparent;
+    text-color:                  inherit;
+}
+textbox-prompt-colon {
+    enabled:                     true;
+    expand:                      false;
+    str:                         "::";
+    background-color:            transparent;
+    text-color:                  inherit;
 }
 entry {
-    enabled:                     false;
+    enabled:                     true;
+    background-color:            transparent;
+    text-color:                  inherit;
+    cursor:                      text;
+    placeholder:                 "Search";
+    placeholder-color:           inherit;
 }
 
-
-// Lists //
-listbox {
-    spacing:                     0em;
-    padding:                     0em;
-    children:                    [ "dummyt" , "listview" , "dummyb" ];
-    background-color:            @background;
-    border-radius:               0em 0em 1em 1em;
-}
+/*****----- Listview -----*****/
 listview {
     enabled:                     true;
-    spacing:                     0.4em;
-    padding:                     1em;
-    columns:                     1;
-    lines:                       10;
+    columns:                     5;
+    lines:                       3;
     cycle:                       true;
     dynamic:                     true;
     scrollbar:                   false;
     layout:                      vertical;
     reverse:                     false;
-    expand:                      false;
     fixed-height:                true;
     fixed-columns:               true;
-    cursor:                      "default";
-    background-color:            @background;
+    border:                      0;
+	background-color:            transparent;
     text-color:                  @foreground;
 }
-dummyt {
-    spacing:                     0em;
-    padding:                     0em;
-    background-color:            @background;
-}
-dummyb {
-    spacing:                     0em;
-    padding:                     0em;
-    background-color:            @background;
-    border-radius:               0em 0em 1em 1em;
-}
 
-
-// Elements //
+/*****----- Elements -----*****/
 element {
     enabled:                     true;
-    spacing:                     1em;
-    padding:                     0.2em 0.2em 0.2em 1.5em;
-    cursor:                      pointer;
-    background-color:            transparent;
+    spacing:                     15px;
+    margin:                      0px;
+    padding:                     20px 10px;
+    border:                      0;
+    border-radius:               10px;
     text-color:                  @foreground;
+    orientation:                 vertical;
+    cursor:                      pointer;
+}
+element normal.normal {
+    background-color:            black / 0.1;
 }
 element selected.normal {
-    background-color:            @selected-active-background;
-    text-color:                  @selected-active-foreground;
+    background-color:            white / 0.1;
+    text-color:                  @foreground;
 }
 element-icon {
-    size:                        2em;
-    cursor:                      inherit;
     background-color:            transparent;
     text-color:                  inherit;
+    size:                        64px;
+    cursor:                      inherit;
 }
 element-text {
-    vertical-align:              0.5;
-    horizontal-align:            0.0;
-    cursor:                      inherit;
     background-color:            transparent;
     text-color:                  inherit;
-}
-
-// Error message //
-error-message {
-    text-color:                  @foreground;
-    background-color:            @background;
-    text-transform:              capitalize;
-    children:                    [ "textbox" ];
-}
-
-textbox {
-    text-color:                  inherit;
-    background-color:            inherit;
-    vertical-align:              0.5;
+    highlight:                   inherit;
+    cursor:                      inherit;
     horizontal-align:            0.5;
 }
