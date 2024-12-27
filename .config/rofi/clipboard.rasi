@@ -2,112 +2,73 @@
 configuration {
     modi:                        "drun";
     show-icons:                  false;
+	font:						 "JetBrainsMonoNL Nerd Font Mono 9";
 }
 
-@theme "~/.config/rofi/theme.rasi"
-
+@theme "~/.cache/wal/colors-rofi-dark.rasi"
 
 // Main //
 window {
-    width:                       23em;
-    height:                      30em;
-    transparency:                "real";
+    width:                       600px;
     fullscreen:                  false;
-    enabled:                     true;
-    cursor:                      "default";
-    spacing:                     0em;
-    padding:                     0em;
-    border-color:                @main-br;
-    background-color:            @main-bg;
+    padding:                     0;
+	border:						 2px solid;
+    border-color:                #33ccffcc;
+	border-radius:				 12px;
+    background-color:            transparent;
 }
 mainbox {
     enabled:                     true;
-    spacing:                     0em;
-    padding:                     0.5em;
+	padding:					 10px;
     orientation:                 vertical;
-    children:                    [ "wallbox" , "listbox" ];
-    background-color:            transparent;
+    children:                    [ "inputbar" , "listview" ];
+    background-color:            @background;
 }
-wallbox {
-    spacing:                     0em;
-    padding:                     0em;
-    expand:                      false;
-    orientation:                 horizontal;
-    background-color:            transparent;
-    background-image:            url("~/.cache/hyde/wall.blur", width);
-    children:                    [ "wallframe" , "inputbar" ];
-}
-wallframe {
-    width:                       5em;
-    spacing:                     0em;
-    padding:                     0em;
-    expand:                      false;
-    background-color:            @main-bg;
-    background-image:            url("~/.cache/hyde/wall.quad", width);
-}
-
 
 // Inputs //
 inputbar {
     enabled:                     true;
-    padding:                     0em;
+	border-radius:				 10px;
+    padding:                     15px;
+	spacing:					 10px;
     children:                    [ "entry" ];
-    background-color:            @main-bg;
-    expand:                      true;
+    background-color:            white / 0.1;
 }
 entry {
     enabled:                     true;
-    padding:                     1.8em;
-    text-color:                  @main-fg;
+    text-color:                  @foreground;
     background-color:            transparent;
 }
 
 
 // Lists //
-listbox {
-    spacing:                     0em;
-    padding:                     0em;
-    orientation:                 vertical;
-    children:                    [ "dummy" , "listview" , "dummy" ];
-    background-color:            transparent;
-}
 listview {
     enabled:                     true;
-    padding:                     0.5em;
     columns:                     1;
     lines:                       11; 
-    cycle:                       true;
+	spacing:					 0;
     fixed-height:                true;
+	scrollbar:					 false;
     fixed-columns:               false;
     expand:                      false;
-    cursor:                      "default";
     background-color:            transparent;
-    text-color:                  @main-fg;
+    text-color:                  @foreground;
 }
-dummy {
-    spacing:                     0em;
-    padding:                     0em;
-    background-color:            transparent;
-}
-
 
 // Elements //
 element {
     enabled:                     true;
-    padding:                     0.5em;
+    padding:                     10px;
     cursor:                      pointer;
-    background-color:            transparent;
-    text-color:                  @main-fg;
+	margin:						 0;
+    text-color:                  @foreground;
 }
 element selected.normal {
-    background-color:            @select-bg;
-    text-color:                  @select-fg;
+    background-color:            white / 0.1;
+    text-color:                  @foreground;
 }
 element-text {
-    vertical-align:              0.0;
-    horizontal-align:            0.0;
     cursor:                      inherit;
     background-color:            transparent;
     text-color:                  inherit;
 }
-
