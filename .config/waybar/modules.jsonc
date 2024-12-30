@@ -7,8 +7,8 @@
 		"format": "{icon}",
 		"format-icons": {
 			"urgent": "",
-			"active": "",
-			"default": ""
+			"active": "",
+			"default": ""
 		},
 		"persistent_workspaces": {
 			"*": 5
