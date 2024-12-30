@@ -22,9 +22,8 @@ window {
 /*****----- Main Box -----*****/
 mainbox {
     enabled:                     true;
-    spacing:                     20px;
-    padding:                     20px;
-    background-color:            transparent;
+    padding:                     10px;
+    background-color:            @background;
     children:                    [ "inputbar", "listview" ];
 }
 
@@ -35,19 +34,13 @@ inputbar {
     padding:                     15px;
     border:                      0;
     border-radius:               10px;
+	background-color:			 white / 0.1;
     text-color:                  @foreground;
     children:                    [ "prompt", "entry" ];
 }
 
 prompt {
     enabled:                     true;
-    background-color:            transparent;
-    text-color:                  inherit;
-}
-textbox-prompt-colon {
-    enabled:                     true;
-    expand:                      false;
-    str:                         "::";
     background-color:            transparent;
     text-color:                  inherit;
 }
@@ -89,9 +82,7 @@ element {
     orientation:                 vertical;
     cursor:                      pointer;
 }
-element normal.normal {
-    background-color:            black / 0.1;
-}
+
 element selected.normal {
     background-color:            white / 0.1;
     text-color:                  @foreground;
