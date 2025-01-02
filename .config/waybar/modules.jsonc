@@ -17,8 +17,7 @@
 
     // clock
     "clock" : {
-		"format": " {:%R}",
-		"format-alt": "󰃭  {:%a, %b %d, %R}",
+		"format": "󰃭  {:%a, %b %d, %R}",
         "tooltip": false
     },
 
