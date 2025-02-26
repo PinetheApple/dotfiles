@@ -4,6 +4,10 @@ local options = {
         c = { "clang-format" },
         cpp = { "clang-format" },
         python = { "isort", "black" },
+        javascript = { "prettier" },
+        typescript = { "prettier" },
+        javascriptreact = { "prettier" },
+        typescriptreact = { "prettier" },
     },
 
     formatters = {
@@ -18,7 +22,12 @@ local options = {
                 PackConstructorInitializers: Never}",
             },
         },
-
+        prettier = {
+            prepend_args = {
+                "--tab-width",
+                "4",
+            },
+        },
         black = {
             prepend_args = {
                 "--fast",
@@ -36,7 +45,7 @@ local options = {
 
     format_on_save = {
         -- These options will be passed to conform.format()
-        timeout_ms = 500,
+        timeout_ms = 1000,
         lsp_fallback = true,
     },
 }
