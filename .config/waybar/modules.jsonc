@@ -21,6 +21,12 @@
         "tooltip": false
     },
 
+	"backlight" : {
+		"device": "intel_backlight",
+		"format": "{percent}% 󰳲",
+		"tooltip": false
+	},
+
     // volume control
     "pulseaudio": {
         "format": "{volume}% {icon} {format_source}",

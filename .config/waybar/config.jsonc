@@ -15,6 +15,7 @@
     ],
 
     "modules-right": [
+		"backlight",
         "pulseaudio",
 		"bluetooth",
         "network",
