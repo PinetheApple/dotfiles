@@ -16,8 +16,7 @@ CACHED_WALLPAPER = HOME + "/.cache/.current_wallpaper"
 PYWAL_CACHE = HOME + "/.cache/wal/"
 
 
-def get_display():
-    display = ""
+def get_displays():
     result = subprocess.run(
         ["hyprctl", "monitors"], capture_output=True, text=True
     )
@@ -27,8 +26,12 @@ def get_display():
         )
         sys.exit(1)
 
-    display = result.stdout.split("\n")[0].split(" ")[1]
-    return display
+    displays = [
+        display_info.split(" ")[1]
+        for display_info in result.stdout.split("\n\n")
+        if len(display_info.split(" ")) > 1
+    ]
+    return displays
 
 
 def get_preloaded_wallpapers():
@@ -53,22 +56,20 @@ def get_preloaded_wallpapers():
 
 
 def convert_to_png(wallpaper: str):
-    img_name = wallpaper.split('/')[-1]
-    if img_name.endswith('.jpg'):
+    img_name = wallpaper.split("/")[-1]
+    if img_name.endswith(".jpg"):
         img_name = img_name[:-4]
     else:
         img_name = img_name[:-5]
 
-    png_wallpaper = '/tmp/' + img_name + '.png'
+    png_wallpaper = "/tmp/" + img_name + ".png"
     if os.path.exists(png_wallpaper):
         print(f"Found {png_wallpaper}.")
         return png_wallpaper
-    
-    print("No PNG version found in \'/tmp\'. Creating PNG version...")
+
+    print("No PNG version found in '/tmp'. Creating PNG version...")
     result = subprocess.run(
-        ["magick", wallpaper, png_wallpaper], 
-        capture_output=True, 
-        text=True
+        ["magick", wallpaper, png_wallpaper], capture_output=True, text=True
     )
     if not result.returncode == 0:
         print(f"Failed to create PNG version. {result.stderr=}")
@@ -93,7 +94,7 @@ def update_pywal():
     print("Successfully updated pywal theme!")
 
 
-def update_wallpaper(wallpaper: str, display: str):
+def update_wallpaper(wallpaper: str, displays: list):
     # check if wallpaper file exists and is an image
     if not (os.path.exists(wallpaper) and os.path.isfile(wallpaper)):
         print(
@@ -105,19 +106,22 @@ def update_wallpaper(wallpaper: str, display: str):
         print(f"{wallpaper} is not a valid JPG or PNG file. Exiting...")
         sys.exit(1)
 
-    wallpaper_arg = display + "," + wallpaper
-    result = subprocess.run(
-        ["hyprctl", "hyprpaper", "wallpaper", wallpaper_arg],
-        capture_output=True,
-        text=True,
-    )
-    if not result.returncode == 0:
-        print(f"Failed to update wallpaper using hyprctl. {result.stderr=}")
-        return
+    for display in displays:
+        wallpaper_arg = display + "," + wallpaper
+        result = subprocess.run(
+            ["hyprctl", "hyprpaper", "wallpaper", wallpaper_arg],
+            capture_output=True,
+            text=True,
+        )
+        if not result.returncode == 0:
+            print(f"Failed to update wallpaper using hyprctl. {result.stderr=}")
+            return
 
     print("Updated wallpaper successfully!\n")
     if wallpaper.endswith((".jpg", ".jpeg")):
-        print("Image is JPG. Checking for PNG version in \'/tmp\' for hyprlock...")
+        print(
+            "Image is JPG. Checking for PNG version in '/tmp' for hyprlock..."
+        )
         wallpaper = convert_to_png(wallpaper)
 
     print("Copying wallpaper to .cache directory...")
@@ -149,14 +153,14 @@ def select_random_wallpaper():
 def main():
     if len(sys.argv) > 1:
         wallpaper = sys.argv[1]
-        if not wallpaper.startswith(('~','/')):
+        if not wallpaper.startswith(("~", "/")):
             wallpaper = HOME + "/Pictures/Wallpapers/" + wallpaper
     else:
         print("No wallpaper specified. Selecting a random wallpaper...")
         wallpaper = select_random_wallpaper()
 
-    display = get_display()
-    update_wallpaper(wallpaper, display)
+    displays = get_displays()
+    update_wallpaper(wallpaper, displays)
     update_pywal()
 
 
