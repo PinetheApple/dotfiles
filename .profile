@@ -27,4 +27,9 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 . "$HOME/.cargo/env"
 
+# add go to the path 
+if [ -d "/usr/local/go/bin" ] ; then
+	PATH="$PATH:/usr/local/go/bin"
+fi
+
 export XDG_DATA_DIRS="/var/lib/flatpak/exports/share:$HOME/.local/share/flatpak/exports/share:/usr/local/share:/usr/share"
