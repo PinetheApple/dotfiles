@@ -14,3 +14,13 @@ alias cd='z'
 alias catimg='kitten icat'
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
+
+alias checkout='git checkout'
+alias pull='git pull origin'
+alias commit='git commit -m'
+alias push='git push'
+alias add='git add .'
+alias unstage='git restore --staged'
+alias status='git status'
+
+alias aliases='cat ~/.config/.bash_aliases'
