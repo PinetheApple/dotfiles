@@ -126,3 +126,11 @@ export NVM_DIR="$HOME/.nvm"
 eval "$(zoxide init bash)"
 
 . "$HOME/.local/bin/env"
+
+# pnpm
+export PNPM_HOME="/home/pineapple/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
