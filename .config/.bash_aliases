@@ -23,4 +23,6 @@ alias add='git add .'
 alias unstage='git restore --staged'
 alias status='git status'
 
+alias pr='gh pr create -b "" -t'
+
 alias aliases='cat ~/.config/.bash_aliases'
