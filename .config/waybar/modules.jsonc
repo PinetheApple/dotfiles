@@ -1,7 +1,7 @@
 {
     // workspaces
     "hyprland/workspaces": {
-		"on-click": "activate",
+		"on-click": "",
 		"active-only": false,
 		"all-outputs": true,
 		"format": "{icon}",
