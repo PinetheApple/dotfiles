@@ -22,6 +22,8 @@ alias push='git push'
 alias add='git add .'
 alias unstage='git restore --staged'
 alias status='git status'
+alias ignore_changes='git update-index --assume-unchanged'
+alias track_changes='git update-index --no-assume-unchanged'
 
 alias pr='gh pr create -b "" -t'
 
