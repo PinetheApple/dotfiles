@@ -14,6 +14,7 @@ alias cd='z'
 alias catimg='kitten icat'
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
+alias killsteam='ps -aux | grep steam | grep -v "grep" | awk "{print $2}" | xargs kill'
 
 alias checkout='git checkout'
 alias pull='git pull origin'
