@@ -6,9 +6,7 @@
 
     "include": ["~/.config/waybar/modules.jsonc"],
 
-    "modules-left": [
-        "hyprland/workspaces"
-    ],
+    "modules-left": [],
 
     "modules-center": [
         "clock"
