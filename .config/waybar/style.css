@@ -16,44 +16,6 @@ window#waybar {
 	color: @foreground;
 }
 
-#workspaces {
-	margin: 0px;
-	padding: 7px;
-}
-
-#workspaces button label {
-	font-size: 0;
-	padding: 0;
-}
-
-#workspaces button {
-	border-radius: 50px;
-	background-color: rgba(255,255,255,0.2);
-	transition: all 0.3s ease-in-out;
-	margin: 0px 3px;
-	padding: 0;
-
-}
-
-#workspaces button:hover {
-	background-color: @foreground;
-	color: @foreground;
-	min-width: 25px;
-}
-
-#workspaces button.active {
-	background-color: @foreground;
-	min-width: 35px;
-	transition: all 0.3s ease-in-out;
-}
-
-#custom-wlogout {
-	color: @foreground;
-	background-color: @background;
-	padding: 0;
-	margin: 0 15px 0 8px;
-}
-
 #clock {
 	font-size: 15px;
 	font-weight: bold;
