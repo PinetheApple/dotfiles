@@ -23,7 +23,7 @@ window#waybar {
 
 #battery {
 	font-size: 12px;
-	margin: 0 8px;
+	margin: 0 10px;
 }
 
 #battery.charging {
@@ -35,19 +35,19 @@ window#waybar {
 }
 
 #network {
-	margin: 0 10px 0 8px;
+	margin: 0 10px 0 10px;
 }
 
 #pulseaudio {
-	margin: 0 8px;
+	margin: 0 10px;
 }
 
 #bluetooth {
-	margin: 0 8px;
+	margin: 0 10px;
 }
 
 #power-profiles-daemon {
-	margin: 0 8px;
+	margin: 0 10px;
 }
 
 #power-profiles-daemon.power-saver {
