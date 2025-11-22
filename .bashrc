@@ -141,3 +141,4 @@ export PYENV_ROOT="$HOME/.pyenv"
 eval "$(pyenv init - bash)"
 eval "$(pyenv virtualenv-init -)"
 # pyenv end
+source "/home/pineapple/.rover/env"
