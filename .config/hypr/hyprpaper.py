@@ -78,20 +78,15 @@ def convert_to_png(wallpaper: str):
     return png_wallpaper
 
 
-def update_pywal():
-    # clear cache as it prevents pywal from properly updating the colours
-    result = subprocess.run(["rm", "-r", PYWAL_CACHE])
-    if not result.returncode == 0:
-        print(f"Failed to clear pywal cache. {result.stderr=}")
-
+def update_color_theme():
     result = subprocess.run(
-        ["wal", "-i", CACHED_WALLPAPER],
+        ["wallust", "run", CACHED_WALLPAPER],
     )
     if not result.returncode == 0:
-        print(f"Failed to update pywal. {result.stderr=}")
+        print(f"Failed to update color theme. {result.stderr=}")
         return
 
-    print("Successfully updated pywal theme!")
+    print("Successfully updated color theme!")
 
 
 def update_wallpaper(wallpaper: str, displays: list):
@@ -118,11 +113,12 @@ def update_wallpaper(wallpaper: str, displays: list):
             return
 
     print("Updated wallpaper successfully!\n")
-    if wallpaper.endswith((".jpg", ".jpeg")):
-        print(
-            "Image is JPG. Checking for PNG version in '/tmp' for hyprlock..."
-        )
-        wallpaper = convert_to_png(wallpaper)
+    # removed for now since hyprlock is not being used
+    # if wallpaper.endswith((".jpg", ".jpeg")):
+    #     print(
+    #         "Image is JPG. Checking for PNG version in '/tmp' for hyprlock..."
+    #     )
+    #     wallpaper = convert_to_png(wallpaper)
 
     print("Copying wallpaper to .cache directory...")
     result = subprocess.run(
@@ -161,7 +157,7 @@ def main():
 
     displays = get_displays()
     update_wallpaper(wallpaper, displays)
-    update_pywal()
+    update_color_theme()
 
 
 if __name__ == "__main__":
