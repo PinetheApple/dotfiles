@@ -12,12 +12,20 @@ esac
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
 
+# ignore certain commands
+HISTIGNORE="clear:pwd:cd:cd *:exit"
+
 # append to the history file, don't overwrite it
 shopt -s histappend
+# save and reload history after every command
+PROMPT_COMMAND='history -a; history -n'
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
+HISTSIZE=10000
+HISTFILESIZE=20000
+
+# timestamps for history
+export HISTTIMEFORMAT='%F %T  '
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
