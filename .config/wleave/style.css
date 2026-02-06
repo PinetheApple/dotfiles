@@ -1,0 +1,40 @@
+@import '../../.cache/wallust/colors-waybar-old.css';
+
+window {
+	font-family: "JetBrainsMonoNL Nerd Font Mono";
+	font-size: 16pt;
+	background-color: rgba(24, 27, 32, 0.6);
+}
+
+button {
+	background-color: transparent;
+	transition: all 0.3s ease-in;
+	box-shadow: 0 0 10px 2px transparent;
+	border-radius: 36px;
+	margin: 10px;
+	padding: 100px;
+}
+
+button:hover {
+	box-shadow: 0 0 10px 3px rgba(0, 0, 0, .4);
+	background-color: grey;
+	transition: all 0.3s cubic-bezier(.55, 0.0, .28, 1.682), box-shadow 0.5s ease-in;
+}
+
+button label.action-name {
+	color: white;
+	font-weight: bold;
+}
+
+button label.keybind {
+	color: white;
+	font-size: 10pt;
+}
+
+image {
+	-gtk-icon-palette: default;
+	color: white;
+	margin: 10px;
+	min-width: 64px;
+	min-height: 64px;
+}

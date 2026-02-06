@@ -121,7 +121,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-. "$HOME/.cargo/env"
 export XDG_RUNTIME_DIR=/run/user/1000
 export EDITOR=/usr/bin/nvim
 export NODE_OPTIONS="--max-old-space-size=4096"
@@ -132,7 +131,9 @@ export NVM_DIR="$HOME/.nvm"
 
 eval "$(zoxide init bash)"
 
-. "$HOME/.local/bin/env"
+#cargo
+export CARGO_ROOT="$HOME/.cargo"
+[[ -d $CARGO_ROOT/bin ]] && export PATH="$CARGO_ROOT/bin:$PATH"
 
 # pnpm
 export PNPM_HOME="/home/pineapple/.local/share/pnpm"
@@ -148,4 +149,4 @@ export PYENV_ROOT="$HOME/.pyenv"
 eval "$(pyenv init - bash)"
 eval "$(pyenv virtualenv-init -)"
 # pyenv end
-source "/home/pineapple/.rover/env"
+

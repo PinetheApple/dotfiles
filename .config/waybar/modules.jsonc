@@ -52,19 +52,6 @@
         "tooltip": false
     },
 
-    // power profiles
-    "power-profiles-daemon": {
-		"format": "{icon}",
-		"tooltip-format": "{profile} mode",
-		"tooltip": true,
-		"format-icons": {
-			"default": "",
-			"performance": "",
-			"balanced": "",
-			"power-saver": ""
-		}
-    },
-
     // battery
     "battery": {
         "states": {

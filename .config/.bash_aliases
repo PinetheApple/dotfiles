@@ -31,3 +31,5 @@ alias pr='gh pr create -b "" -t'
 alias aliases='cat ~/.config/.bash_aliases'
 
 alias pip_login='bash ~/Work/pip_tool_login.sh'
+
+alias venv='source ~/scripts/venv_wrapper.sh'

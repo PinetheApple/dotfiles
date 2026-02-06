@@ -1,5 +1,5 @@
 /* Importing pywal colors */
-@import '../../.cache/wal/colors-waybar.css';
+@import '../../.cache/wallust/colors-waybar-old.css';
 
 window {
 	font-family: "JetBrainsMonoNL Nerd Font Mono";

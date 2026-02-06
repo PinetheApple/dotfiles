@@ -1,0 +1,39 @@
+{
+    "margin": 300,
+	"css": "/home/pineapple/.config/wleave/style.css",
+    "buttons-per-row": "1/1",
+    "close-on-lost-focus": true,
+    "show-keybinds": true,
+	"no-version-info": true,
+	"button-aspect-ratio": 1,
+    "buttons": [
+        {
+            "label": "suspend",
+            "action": "playerctl pause; bluetoothctl disconnect; hyprlock & systemctl suspend",
+            "text": "Suspend",
+            "keybind": "s",
+            "icon": "/home/pineapple/.config/wleave/icons/suspend.png"
+        },
+        {
+            "label": "shutdown",
+            "action": "systemctl poweroff",
+            "text": "Shutdown",
+            "keybind": "q",
+            "icon": "/home/pineapple/.config/wleave/icons/power.png"
+        },
+        {
+            "label": "reboot",
+            "action": "systemctl reboot",
+            "text": "Reboot",
+            "keybind": "r",
+            "icon": "/home/pineapple/.config/wleave/icons/restart.png"
+        },
+        {
+            "label": "lock",
+            "action": "hyprlock",
+            "text": "Lock",
+            "keybind": "l",
+            "icon": "/home/pineapple/.config/wleave/icons/lock.png"
+        }
+    ]
+}
