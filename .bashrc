@@ -150,3 +150,4 @@ eval "$(pyenv init - bash)"
 eval "$(pyenv virtualenv-init -)"
 # pyenv end
 
+export PATH="$HOME/.local/bin:$PATH"

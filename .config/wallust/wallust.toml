@@ -43,5 +43,5 @@ rofi.target = '~/.cache/wallust/colors-rofi.rasi'
 waybar.template = 'colors-waybar.css'
 waybar.target = '~/.cache/wallust/colors-waybar.css'
 
-kitty.template = 'colors-kitty.conf'
-kitty.target = '~/.cache/wallust/colors-kitty.conf'
+# kitty.template = 'colors-kitty.conf'
+# kitty.target = '~/.cache/wallust/colors-kitty.conf'

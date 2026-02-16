@@ -157,7 +157,7 @@ def main():
 
     displays = get_displays()
     update_wallpaper(wallpaper, displays)
-    update_color_theme()
+    # update_color_theme()
 
 
 if __name__ == "__main__":
