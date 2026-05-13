@@ -151,3 +151,10 @@ eval "$(pyenv virtualenv-init -)"
 # pyenv end
 
 export PATH="$HOME/.local/bin:$PATH"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# opencode
+export PATH=/home/pineapple/.opencode/bin:$PATH
