@@ -130,6 +130,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 eval "$(zoxide init bash)"
+source ~/scripts/fzf_cd.sh
 
 #cargo
 export CARGO_ROOT="$HOME/.cargo"

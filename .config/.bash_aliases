@@ -10,7 +10,6 @@ alias ll='eza -la'
 alias lr='eza --git-ignore -R'
 alias cat='bat'
 alias wallpaper='~/.config/hypr/hyprpaper.py'
-alias cd='z'
 alias catimg='kitten icat'
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
@@ -32,4 +31,4 @@ alias aliases='cat ~/.config/.bash_aliases'
 
 alias pip_login='bash ~/Work/pip_tool_login.sh'
 
-alias venv='source ~/scripts/venv_wrapper.sh'
+source ~/scripts/venv_wrapper.sh
