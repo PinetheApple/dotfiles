@@ -1,13 +1,15 @@
 alias open=xdg-open
 alias ghidra='~/ghidra/ghidra_11.2_PUBLIC/ghidraRun'
 alias vi=nvim
-alias vim=nvim
 alias updatedb='sudo updatedb'
 alias bluetooth='~/.config/bluetooth_manager'
+
 alias ls='eza'
 alias la='eza -a'
 alias ll='eza -la'
 alias lr='eza --git-ignore -R'
+alias tree='eza --tree'
+
 alias cat='bat'
 alias wallpaper='~/.config/hypr/hyprpaper.py'
 alias catimg='kitten icat'
@@ -29,6 +31,6 @@ alias pr='gh pr create -b "" -t'
 
 alias aliases='cat ~/.config/.bash_aliases'
 
-alias pip_login='bash ~/Work/pip_tool_login.sh'
+# alias pip_login='bash ~/Work/pip_tool_login.sh'
 
 source ~/scripts/venv_wrapper.sh
