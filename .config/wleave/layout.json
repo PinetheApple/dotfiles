@@ -9,7 +9,7 @@
     "buttons": [
         {
             "label": "suspend",
-            "action": "playerctl pause; bluetoothctl disconnect; hyprlock & systemctl suspend",
+            "action": "playerctl pause; bluetoothctl disconnect; loginctl lock-session; systemctl suspend",
             "text": "Suspend",
             "keybind": "s",
             "icon": "/home/pineapple/.config/wleave/icons/suspend.png"
@@ -30,7 +30,7 @@
         },
         {
             "label": "lock",
-            "action": "hyprlock",
+            "action": "loginctl lock-session",
             "text": "Lock",
             "keybind": "l",
             "icon": "/home/pineapple/.config/wleave/icons/lock.png"
