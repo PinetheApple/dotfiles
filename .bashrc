@@ -131,6 +131,7 @@ export NVM_DIR="$HOME/.nvm"
 
 eval "$(zoxide init bash)"
 source ~/scripts/fzf_cd.sh
+source ~/scripts/gh_account.sh
 
 #cargo
 export CARGO_ROOT="$HOME/.cargo"
@@ -159,3 +160,5 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 # opencode
 export PATH=/home/pineapple/.opencode/bin:$PATH
+
+source /usr/share/nvm/init-nvm.sh
