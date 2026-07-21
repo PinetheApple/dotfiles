@@ -1,0 +1,105 @@
+# wayle 0.6.0 — default bar (source: ~/dotfiles/.config/wayle, symlink -> ~/.config/wayle).
+# Sizes are rem multipliers. Hot-reloads on save. Custom CSS: styles/index.scss
+
+[general]
+font-sans    = "JetBrainsMono Nerd Font"
+font-mono    = "JetBrainsMono Nerd Font"
+tearing-mode = false
+
+# ---- Bar: flush to screen edges ----------------------------------------------
+[bar]
+location   = "top"
+layer      = "top"
+exclusive  = true
+scale      = 0.82       # shrink whole bar uniformly (thickness, text, spacing, radius)
+inset-edge = 0.0
+inset-ends = 0.0
+rounding   = "none"
+shadow     = "none"
+padding      = 0.0
+padding-ends = 0.35
+module-gap   = 0.7
+
+bg                = "bg-surface"
+background-opacity = 100
+border-location   = "none"
+
+# ---- Buttons: flat, blend into bar (subtle fill only on hover) ---------------
+button-variant       = "basic"
+button-rounding      = "sm"
+button-icon-position = "start"
+button-icon-size     = 0.8
+button-label-size    = 0.8
+button-label-weight  = "normal"
+button-icon-padding  = 0.15
+button-label-padding = 0.15
+button-gap           = 0.3
+
+# ---- Modules -----------------------------------------------------------------
+[modules.clock]
+format          = "%a, %b %d, %R"
+icon-show       = false
+label-color     = "fg-default"
+button-bg-color = "bg-surface"
+
+[modules.brightness]
+format          = "{{ percent }}%"
+icon-color      = "auto"
+label-color     = "fg-muted"
+button-bg-color = "bg-surface"
+
+[modules.volume]
+format          = "{{ percent }}%"
+icon-color      = "auto"
+label-color     = "fg-muted"
+button-bg-color = "bg-surface"
+
+[modules.bluetooth]                  # left-click = dropdown:bluetooth (power/scan/connect)
+label-max-length = 15
+icon-color       = "auto"
+label-color      = "fg-muted"
+button-bg-color  = "bg-surface"
+
+[modules.network]
+label-max-length = 15
+icon-color       = "auto"
+label-color      = "fg-muted"
+button-bg-color  = "bg-surface"
+
+[modules.battery]
+format          = "{{ percent }}%"
+icon-color      = "auto"
+label-color     = "fg-muted"
+button-bg-color = "bg-surface"
+
+# ---- Layout ------------------------------------------------------------------
+[[bar.layout]]
+monitor = "*"
+show    = true
+left    = []
+center  = [{ module = "clock", class = "clock-hero" }]
+right   = ["brightness", "volume", "bluetooth", "network", "battery"]
+
+# ---- Theme: greyscale, tracks wallust palette --------------------------------
+[styling]
+theme-provider = "wayle"
+rounding       = "md"
+
+[styling.palette]
+bg       = "#000000"
+surface  = "#0e0e0e"
+elevated = "#1a1a1a"
+fg       = "#d0d0d0"
+fg-muted = "#8d8d8d"
+primary  = "#cfcfcf"
+red      = "#474747"
+yellow   = "#676767"
+green    = "#575757"
+blue     = "#777777"
+
+# ---- Bundled features dunst / hyprpaper own ----------------------------------
+[wallpaper]
+engine-enabled = false
+
+[osd]
+enabled = false
