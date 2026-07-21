@@ -5,7 +5,7 @@ configuration {
 	font:						 "JetBrainsMonoNL Nerd Font Mono 9";
 }
 
-@theme "~/.cache/wal/colors-rofi-dark.rasi"
+@theme "~/.cache/wallust/colors-rofi.rasi"
 
 // Main //
 window {

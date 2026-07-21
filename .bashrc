@@ -121,7 +121,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-. "$HOME/.cargo/env"
 export XDG_RUNTIME_DIR=/run/user/1000
 export EDITOR=/usr/bin/nvim
 export NODE_OPTIONS="--max-old-space-size=4096"
@@ -131,8 +130,12 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 eval "$(zoxide init bash)"
+source ~/scripts/fzf_cd.sh
+source ~/scripts/gh_account.sh
 
-. "$HOME/.local/bin/env"
+#cargo
+export CARGO_ROOT="$HOME/.cargo"
+[[ -d $CARGO_ROOT/bin ]] && export PATH="$CARGO_ROOT/bin:$PATH"
 
 # pnpm
 export PNPM_HOME="/home/pineapple/.local/share/pnpm"
@@ -148,4 +151,14 @@ export PYENV_ROOT="$HOME/.pyenv"
 eval "$(pyenv init - bash)"
 eval "$(pyenv virtualenv-init -)"
 # pyenv end
-source "/home/pineapple/.rover/env"
+
+export PATH="$HOME/.local/bin:$PATH"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# opencode
+export PATH=/home/pineapple/.opencode/bin:$PATH
+
+source /usr/share/nvm/init-nvm.sh

@@ -1,4 +1,4 @@
-@import url("../../.cache/wal/colors-waybar.css");
+@import url("../../.cache/wallust/colors-waybar-old.css");
 
 * {
 	border: none;
@@ -44,20 +44,4 @@ window#waybar {
 
 #bluetooth {
 	margin: 0 10px;
-}
-
-#power-profiles-daemon {
-	margin: 0 10px;
-}
-
-#power-profiles-daemon.power-saver {
-	color: @color15;
-}
-
-#power-profiles-daemon.balanced {
-	color: @foreground;
-}
-
-#power-profiles-daemon.performance {
-	color: @color2;
 }

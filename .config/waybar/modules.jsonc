@@ -39,7 +39,11 @@
 		"format-on": " on",
 		"format-connected": " {device_alias}",
 		"format-disabled": "󰂲",
-		"tooltip": false
+		"tooltip-format": "{controller_alias}\t{status} | {num_connections} connected",
+		"tooltip-format-connected": "{controller_alias}\t{status}\n{device_enumerate}",
+		"tooltip-format-enumerate-connected": "{device_alias}",
+		"on-click": "blueman-manager",
+		"on-click-right": "bluetoothctl show | grep -q 'Powered: yes' && bluetoothctl power off || bluetoothctl power on"
     },
 
     // network info    
@@ -50,19 +54,6 @@
 		"format-disabled": "󰖪",
         "format-alt": "",
         "tooltip": false
-    },
-
-    // power profiles
-    "power-profiles-daemon": {
-		"format": "{icon}",
-		"tooltip-format": "{profile} mode",
-		"tooltip": true,
-		"format-icons": {
-			"default": "",
-			"performance": "",
-			"balanced": "",
-			"power-saver": ""
-		}
     },
 
     // battery

@@ -1,0 +1,24 @@
+// Custom wayle styles — layered on top of config.toml. CSS needs a wayle restart
+// to apply (only config.toml hot-reloads). Palette as CSS vars: var(--palette-*).
+// Bar module widget = `.bar-button`; its text = `.bar-button-label`.
+
+// Pills: smooth hover lift instead of a harsh block swap.
+.bar-button {
+  transition: background-color 160ms ease, box-shadow 160ms ease, opacity 160ms ease;
+}
+.bar-button:hover  { --bar-btn-bg: var(--palette-elevated); }
+.bar-button:active { opacity: 0.9; }
+
+// Dropdown panels: readable row hover / selected states (single accent = selected).
+popover row,
+popover listview > row {
+  border-radius: 8px;
+  transition: background-color 140ms ease;
+}
+popover row:hover,
+popover listview > row:hover { background-color: var(--palette-elevated); }
+popover row:selected,
+popover listview > row:selected {
+  background-color: var(--palette-primary);
+  color: var(--palette-bg);
+}

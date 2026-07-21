@@ -17,8 +17,6 @@
         "pulseaudio",
 		"bluetooth",
         "network",
-        "power-profiles-daemon",
-        "battery",
-		"custom/wlogout"
+        "battery"
     ]
 }
