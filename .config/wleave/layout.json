@@ -16,14 +16,14 @@
         },
         {
             "label": "shutdown",
-            "action": "systemctl poweroff",
+            "action": "~/.config/hypr/power-confirm.sh poweroff",
             "text": "Shutdown",
             "keybind": "q",
             "icon": "/home/pineapple/.config/wleave/icons/power.png"
         },
         {
             "label": "reboot",
-            "action": "systemctl reboot",
+            "action": "~/.config/hypr/power-confirm.sh reboot",
             "text": "Reboot",
             "keybind": "r",
             "icon": "/home/pineapple/.config/wleave/icons/restart.png"
