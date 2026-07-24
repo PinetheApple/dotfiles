@@ -143,6 +143,10 @@ case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
+case ":$PATH:" in
+  *":$PNPM_HOME/bin:"*) ;;
+  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
+esac
 # pnpm end
 
 # pyenv config
@@ -162,3 +166,13 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH=/home/pineapple/.opencode/bin:$PATH
 
 source /usr/share/nvm/init-nvm.sh
+
+# >>> headroom persistent env >>>
+export HEADROOM_PORT="8787"
+export HEADROOM_HOST="127.0.0.1"
+export HEADROOM_MODE="token"
+export HEADROOM_BACKEND="anthropic"
+export HEADROOM_TELEMETRY="off"
+export ANTHROPIC_BASE_URL="http://127.0.0.1:8787"
+export ENABLE_TOOL_SEARCH="true"
+# <<< headroom persistent env <<<

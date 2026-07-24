@@ -36,3 +36,13 @@ export XDG_DATA_DIRS="/var/lib/flatpak/exports/share:$HOME/.local/share/flatpak/
 
 . "$HOME/.local/bin/env"
 source "/home/pineapple/.rover/env"
+
+# >>> headroom persistent env >>>
+export HEADROOM_PORT="8787"
+export HEADROOM_HOST="127.0.0.1"
+export HEADROOM_MODE="token"
+export HEADROOM_BACKEND="anthropic"
+export HEADROOM_TELEMETRY="off"
+export ANTHROPIC_BASE_URL="http://127.0.0.1:8787"
+export ENABLE_TOOL_SEARCH="true"
+# <<< headroom persistent env <<<
