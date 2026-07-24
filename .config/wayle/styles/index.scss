@@ -22,3 +22,15 @@ popover listview > row:selected {
   background-color: var(--palette-primary);
   color: var(--palette-bg);
 }
+
+// Caffeine module: bright when sleep is blocked, dim when allowed.
+// Constrain the Nerd Font glyph so the hover pill fully wraps it.
+.caf-on  .bar-button-label,
+.caf-off .bar-button-label {
+  font-size: 0.8rem;
+  line-height: 1;
+  margin: 0;
+  padding: 0;
+}
+.caf-on  .bar-button-label { color: var(--palette-fg); }
+.caf-off .bar-button-label { color: var(--palette-fg-muted); opacity: 0.55; }

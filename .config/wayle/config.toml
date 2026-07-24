@@ -72,13 +72,26 @@ icon-color      = "auto"
 label-color     = "fg-muted"
 button-bg-color = "bg-surface"
 
+[[modules.custom]]                   # left-click toggles the sleep inhibitor (caffeine-toggle)
+id             = "caffeine"
+command        = "~/scripts/caffeine-status.sh"
+interval-ms    = 2000                 # reflect toggles made via the SUPER+SHIFT+I keybind too
+format         = "{{ text }}"
+tooltip-format = "Sleep {{ 'blocked' if alt == 'on' else 'allowed' }}"
+class-format   = "caf-{{ alt }}"
+left-click     = "caffeine-toggle"
+on-action      = "~/scripts/caffeine-status.sh"
+icon-show      = false
+label-color    = "fg-muted"
+button-bg-color = "bg-surface"
+
 # ---- Layout ------------------------------------------------------------------
 [[bar.layout]]
 monitor = "*"
 show    = true
 left    = []
 center  = [{ module = "clock", class = "clock-hero" }]
-right   = ["brightness", "volume", "bluetooth", "network", "battery"]
+right   = ["custom-caffeine", "brightness", "volume", "bluetooth", "network", "battery"]
 
 # ---- Theme: greyscale, tracks wallust palette --------------------------------
 [styling]

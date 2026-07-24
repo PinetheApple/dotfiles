@@ -15,6 +15,7 @@ monitor = "*"
 show = true
 left = ["media"]
 right = [
+    "custom-caffeine",
     "brightness",
     "volume",
     "bluetooth",
@@ -33,6 +34,9 @@ scale = 1.0
 monitor-specific = false
 icon-size = 0.3499999940395355
 label-size = 0.8500000238418579
+
+[modules.notifications]
+popup-monitor = "HDMI-A-1"
 
 [wallpaper]
 engine-enabled = true
