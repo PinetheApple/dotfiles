@@ -1,5 +1,4 @@
 -- For full list, see wiki - https://wiki.hypr.land/
--- Ported from hyprland.conf (hyprlang) -- .conf support is removed in 0.57.
 
 local colors = require("myColors")
 

@@ -1,4 +1,4 @@
--- Keybinds. Ported from myBinds.conf.
+-- Keybinds.
 
 local v = require("myVars")
 

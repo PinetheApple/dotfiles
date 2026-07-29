@@ -1,4 +1,4 @@
--- Apps and system commands. Ported from myVars.conf.
+-- Apps and system commands.
 
 local rofiConfig = "~/.config/rofi/clipboard.rasi"
 
