@@ -131,7 +131,6 @@ export NVM_DIR="$HOME/.nvm"
 
 eval "$(zoxide init bash)"
 source ~/scripts/fzf_cd.sh
-source ~/scripts/gh_account.sh
 
 #cargo
 export CARGO_ROOT="$HOME/.cargo"
