@@ -86,6 +86,10 @@ def update_color_theme():
         print(f"Failed to update color theme. {result.stderr=}")
         return
 
+    # The lua config reads the wallust cache instead of sourcing it, so
+    # Hyprland no longer watches that file for changes.
+    subprocess.run(["hyprctl", "reload"])
+
     print("Successfully updated color theme!")
 
 
