@@ -40,8 +40,13 @@ hl.bind(mainShift .. " + I", exec("caffeine-toggle")) -- toggle sleep inhibitor
 hl.bind(main .. " + CONTROL + S", exec("~/.config/hypr/session-save.sh"))
 hl.bind(main .. " + CONTROL + R", exec("~/.config/hypr/session-restore.sh"))
 
+local openwhisprToggle =
+    "dbus-send --session --type=method_call --dest=com.openwhispr.App "
+    .. "/com/openwhispr/App com.openwhispr.App.Toggle"
+
 -- app specific binds
 hl.bind(main .. " + B", exec(v.browser)) -- Zen Browser
+hl.bind("ALT + SHIFT + C", exec(openwhisprToggle)) -- OpenWhispr dictation (tap to start/stop)
 
 -- volume control
 hl.bind("XF86AudioRaiseVolume",
