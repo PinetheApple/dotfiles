@@ -140,3 +140,5 @@ export HEADROOM_TELEMETRY="off"
 export ANTHROPIC_BASE_URL="http://127.0.0.1:8787"
 export ENABLE_TOOL_SEARCH="true"
 # <<< headroom persistent env <<<
+
+alias claw='claude --dangerously-skip-permissions'
