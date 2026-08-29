@@ -3,3 +3,6 @@
 
 # wayle rewrites this at runtime (popup-monitor follows the active display)
 .config/wayle/runtime.toml
+
+# personal git identity + credential helper; not versioned
+.gitconfig
