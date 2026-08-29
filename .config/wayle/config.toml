@@ -72,6 +72,21 @@ icon-color      = "auto"
 label-color     = "fg-muted"
 button-bg-color = "bg-surface"
 
+[[modules.custom]]                   # count of open windows anywhere; tooltip breaks it down
+id             = "windows"
+command        = "~/scripts/hypr-windows.sh"
+interval-ms    = 1500
+format         = "{{ text }}"
+class-format   = "win-{{ alt }}"
+icon-show      = true
+label-color    = "fg-muted"
+button-bg-color = "bg-surface"
+
+[modules.custom.icon-map]
+open    = "ld-app-window-symbolic"
+none    = "tb-minus-symbolic"
+default = "ld-app-window-symbolic"
+
 [[modules.custom]]                   # left-click toggles the sleep inhibitor (caffeine-toggle)
 id             = "caffeine"
 command        = "~/scripts/caffeine-status.sh"
@@ -89,7 +104,7 @@ button-bg-color = "bg-surface"
 [[bar.layout]]
 monitor = "*"
 show    = true
-left    = []
+left    = ["custom-windows"]
 center  = [{ module = "clock", class = "clock-hero" }]
 right   = ["custom-caffeine", "brightness", "volume", "bluetooth", "network", "battery"]
 

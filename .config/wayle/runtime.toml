@@ -13,7 +13,10 @@ button-border-width = 0
 [[bar.layout]]
 monitor = "*"
 show = true
-left = ["media"]
+left = [
+    "custom-windows",
+    "media",
+]
 right = [
     "custom-caffeine",
     "brightness",
@@ -36,7 +39,7 @@ icon-size = 0.3499999940395355
 label-size = 0.8500000238418579
 
 [modules.notifications]
-popup-monitor = "HDMI-A-1"
+popup-monitor = "eDP-2"
 
 [wallpaper]
 engine-enabled = true
