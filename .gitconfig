@@ -1,0 +1,15 @@
+[credential "https://github.com"]
+	helper =
+	helper = "!f() { [ \"$1\" = get ] || exit 0; u=$(git config user.name); echo username=$u; echo password=$(gh auth token --user \"$u\"); }; f"
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[init]
+	defaultBranch = main
+
+[user]
+	name = PinetheApple
+	email = 75367614+PinetheApple@users.noreply.github.com
+
+[includeIf "gitdir:~/Work/"]
+	path = ~/Work/.gitconfig
