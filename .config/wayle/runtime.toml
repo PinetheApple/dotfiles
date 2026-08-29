@@ -39,7 +39,7 @@ icon-size = 0.3499999940395355
 label-size = 0.8500000238418579
 
 [modules.notifications]
-popup-monitor = "eDP-2"
+popup-monitor = "HDMI-A-1"
 
 [wallpaper]
 engine-enabled = true
