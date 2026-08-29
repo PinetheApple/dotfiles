@@ -40,13 +40,8 @@ hl.bind(mainShift .. " + I", exec("caffeine-toggle")) -- toggle sleep inhibitor
 hl.bind(main .. " + CONTROL + S", exec("~/.config/hypr/session-save.sh"))
 hl.bind(main .. " + CONTROL + R", exec("~/.config/hypr/session-restore.sh"))
 
-local openwhisprToggle =
-    "dbus-send --session --type=method_call --dest=com.openwhispr.App "
-    .. "/com/openwhispr/App com.openwhispr.App.Toggle"
-
 -- app specific binds
 hl.bind(main .. " + B", exec(v.browser)) -- Zen Browser
-hl.bind("ALT + SHIFT + C", exec(openwhisprToggle)) -- OpenWhispr dictation (tap to start/stop)
 
 -- volume control
 hl.bind("XF86AudioRaiseVolume",
@@ -55,7 +50,7 @@ hl.bind("XF86AudioLowerVolume",
     exec("wpctl set-volume -l 1.4 @DEFAULT_AUDIO_SINK@ 5%-"), { repeating = true })
 hl.bind("XF86AudioMute", exec("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"))
 hl.bind("XF86AudioMicMute",
-    exec("pactl set-source-mute alsa_input.pci-0000_00_1f.3.analog-stereo toggle"))
+    exec("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"))
 
 -- brightness control
 hl.bind("XF86MonBrightnessDown", exec("brightnessctl s 5%-"))
@@ -65,6 +60,11 @@ hl.bind("XF86MonBrightnessUp", exec("brightnessctl s +5%"))
 hl.bind("Home", exec("playerctl play-pause"))
 hl.bind("Prior", exec("playerctl previous"))
 hl.bind("Next", exec("playerctl next"))
+hl.bind("XF86AudioPlay", exec("playerctl play-pause"), { locked = true })
+hl.bind("XF86AudioPause", exec("playerctl play-pause"), { locked = true })
+hl.bind("XF86AudioStop", exec("playerctl stop"), { locked = true })
+hl.bind("XF86AudioNext", exec("playerctl next"), { locked = true })
+hl.bind("XF86AudioPrev", exec("playerctl previous"), { locked = true })
 
 -- Screenshot focused monitor (direct save) / region (select + annotate in swappy)
 hl.bind("PRINT", exec(screenshotMonitor))
@@ -91,3 +91,6 @@ hl.bind(main .. " + mouse_up", hl.dsp.focus({ workspace = "e-1" }))
 -- Move/resize windows with mainMod + LMB/RMB and dragging
 hl.bind(main .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
 hl.bind(main .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
+
+-- dictation: meeting-mode transcription of system audio (toggle)
+hl.bind("ALT + SHIFT + T", exec("voxtype-meeting-toggle"))
