@@ -34,3 +34,5 @@ alias aliases='cat ~/.config/.bash_aliases'
 # alias pip_login='bash ~/Work/pip_tool_login.sh'
 
 source ~/scripts/venv_wrapper.sh
+
+alias claw='happy --yolo'

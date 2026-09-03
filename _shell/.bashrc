@@ -141,4 +141,12 @@ export ANTHROPIC_BASE_URL="http://127.0.0.1:8787"
 export ENABLE_TOOL_SEARCH="true"
 # <<< headroom persistent env <<<
 
-alias claw='claude --dangerously-skip-permissions'
+
+# npm global bin (npm prefix -g). Appended so it never shadows pnpm/bun/cargo bins.
+NPM_GLOBAL_BIN="$HOME/.nvm/versions/node/v22.22.3/bin"
+if [[ -d $NPM_GLOBAL_BIN ]]; then
+  case ":$PATH:" in
+    *":$NPM_GLOBAL_BIN:"*) ;;
+    *) export PATH="$PATH:$NPM_GLOBAL_BIN" ;;
+  esac
+fi
