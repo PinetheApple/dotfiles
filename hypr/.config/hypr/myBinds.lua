@@ -23,9 +23,7 @@ hl.bind(main .. " + R", exec(v.menu))
 hl.bind("XF86Search", exec(v.menu), { ignore_mods = true })
 hl.bind(main .. " + P", hl.dsp.window.pseudo()) -- dwindle
 hl.bind(main .. " + C", exec(v.clipboard))
-hl.bind(mainShift .. " + F", function()
-    hl.window.fullscreen({ mode = "fullscreen", action = "toggle" })
-end)
+hl.bind(mainShift .. " + F", hl.dsp.window.fullscreen({ mode = "fullscreen", action = "toggle" }))
 hl.bind(main .. " + O", exec(v.wallpaper))
 
 -- power related
