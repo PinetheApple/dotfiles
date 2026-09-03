@@ -51,6 +51,7 @@ hl.on("config.reloaded", applyGtkTheme)
 hl.env("XCURSOR_SIZE", "24")
 hl.env("QT_QPA_PLATFORMTHEME", "qt6ct") -- change to qt5ct if you have that for Qt apps
 hl.env("QT_QPA_PLATFORM", "wayland")
+hl.env("XDG_CONFIG_DIRS", "/etc/xdg")
 
 -- For all categories, see https://wiki.hypr.land/Configuring/Basics/Variables/
 hl.config({
