@@ -35,4 +35,4 @@ alias aliases='cat ~/.config/.bash_aliases'
 
 source ~/scripts/venv_wrapper.sh
 
-alias claw='happy --yolo'
+alias claw='claude --dangerously-skip-permissions'
