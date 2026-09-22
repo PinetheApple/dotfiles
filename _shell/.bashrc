@@ -20,6 +20,16 @@ shopt -s histappend
 # save and reload history after every command
 PROMPT_COMMAND='history -a; history -n'
 
+# Checkpoint terminal state once per prompt without leaving jobs in Bash's table.
+__hypr_session_save="${HYPR_SESSION_SAVE:-$HOME/.config/hypr/session-save.sh}"
+__hypr_session_prompt_return() {
+    local previous_status=$1
+    "$__hypr_session_save" --quiet >/dev/null 2>&1 &
+    disown "$!"
+    return "$previous_status"
+}
+PROMPT_COMMAND="__hypr_session_prompt_return \"\$?\"; $PROMPT_COMMAND"
+
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=10000
 HISTFILESIZE=20000

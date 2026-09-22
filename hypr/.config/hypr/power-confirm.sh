@@ -29,6 +29,18 @@ if checked_in && ask "You're clocked in to HRMS. Check out before $verb?"; then
         notify-send --app-name=HRMS "HRMS checkout failed" "See hrms-checkin.log — continuing with $verb."
 fi
 
-[ -x "$SAVE" ] && "$SAVE" >/dev/null 2>&1
+if ! "$SAVE" --quiet --freeze; then
+    notify-send --app-name="Hyprland session" "Session checkpoint failed" \
+        "Keeping the previous checkpoint. See ~/.local/state/hypr-session/session.log — continuing with $verb."
+fi
 
-systemctl "$action"
+if systemctl "$action"; then
+    exit 0
+else
+    status=$?
+    if ! "$SAVE" --quiet --thaw; then
+        notify-send --app-name="Hyprland session" "Session checkpoints remain frozen" \
+            "Run ~/.config/hypr/session-save.sh --thaw to resume checkpoints."
+    fi
+    exit "$status"
+fi
