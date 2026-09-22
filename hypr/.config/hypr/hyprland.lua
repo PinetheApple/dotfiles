@@ -25,7 +25,6 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("~/.config/hypr/hyprpaper.sh")
     hl.exec_cmd("wayle panel start")
     hl.exec_cmd("~/scripts/notify-follow-monitor.sh") -- notifications follow focused monitor
-    hl.exec_cmd("~/.config/hypr/hyprpaper.py")
     hl.exec_cmd("wl-paste --watch cliphist store")
     hl.exec_cmd("hypridle")
 
